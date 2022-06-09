@@ -14,8 +14,7 @@ spec:
       
       containers:
       - name: flask-api
-#         image: idrisniyi94/python-flask-api:2.0
-          image: okteto.dev/flask-api:latest
+        image: okteto.dev/flask-api:latest
         resources:
           limits:
             memory: "200Mi"
