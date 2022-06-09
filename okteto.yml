@@ -4,4 +4,4 @@ build:
      context: .
      dockerfile: Dockerfile
 deploy:
-  - kubectl apply -f flask-deployment.yaml
+  - kubectl apply -f k8s
