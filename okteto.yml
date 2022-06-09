@@ -1,6 +1,6 @@
 build:
   flask-api:
-     image: idrisniyi94/python-flask-api:2.0
+     image: okteto.dev/flask-api:latest
      context: .
      dockerfile: Dockerfile
 deploy:
