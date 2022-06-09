@@ -1,0 +1,7 @@
+build:
+  flask-api:
+     image: idrisniyi94/python-flask-api:2.0
+     context: .
+     dockerfile: Dockerfile
+deploy:
+  - kubectl apply -f flask-deployment.yaml
