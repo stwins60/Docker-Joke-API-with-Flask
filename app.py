@@ -65,6 +65,37 @@ def delete_joke():
     #         return jsonify({'message': 'Joke deleted'})
     # return jsonify({'message': 'No joke found'})
 
+@API.errorhandler(404)
+def not_found(error=None):
+    message = {
+        'status': 404,
+        'message': 'Not Found: ' + request.url,
+    }
+    return jsonify(message), 404
+
+@API.errorhandler(400)
+def bad_request(error=None):
+    message = {
+        'status': 400,
+        'message': 'Bad Request: ' + request.url,
+    }
+    return jsonify(message), 400
+
+@API.errorhandler(405)
+def method_not_allowed(error=None):
+    message = {
+        'status': 405,
+        'message': 'Method Not Allowed: ' + request.url,
+    }
+    return jsonify(message), 405
+
+@API.errorhandler(500)
+def internal_error(error=None):
+    message = {
+        'status': 500,
+        'message': 'Internal Server Error: ' + request.url,
+    }
+    return jsonify(message), 500
 
 if __name__ == '__main__':
     API.run(debug=True)
